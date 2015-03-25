@@ -179,6 +179,26 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
             }
         })
 
+        // meteriel
+        .state('meterielmanager', {
+            url: '/materielmanager.html',
+            templateUrl: "QSViews/materielmanager.html",
+            data: { pageTitle: "物料数据维护" },
+            controller: 'BussnessQuoteController',
+            resolve: {
+                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'MetronicApp',
+                        insertBefore: '#ng_load_plugins_before',
+                        files: [
+                            'js/controllers/BussnessQuoteController.js'
+                        ]
+                    });
+                }]
+            }
+        })
+
+
         // User Profile Dashboard
         .state("profile.dashboard", {
             url: "/dashboard",

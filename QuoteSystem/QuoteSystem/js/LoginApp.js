@@ -7,8 +7,11 @@ var LoginApp = angular.module("LoginApp", []);
 LoginApp.controller('LoginController',
     ['$scope',
      '$rootScope',
-     function ($scope, $rootScope) {
+     '$location',
+     '$window',
+     function ($scope, $rootScope, $location, $window) {
          $scope.OnSubmit = function () {
-             alert('Submit');
+             var mainUrl = $location.protocol() + "://" + $location.host() + ":" + $location.port() + "/index.html";
+             window.location.replace(mainUrl);
          };
      }])

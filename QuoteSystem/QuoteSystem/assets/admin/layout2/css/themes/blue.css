@@ -398,8 +398,8 @@ Page Footer
     box-shadow: none;
   }
 }
-@media (max-width: 480px) {
-  /* 480px */
+@media (max-width: 767px) {
+  /* 767px */
   .page-header.navbar {
     background: #17C4BB;
     /* Top menu */
