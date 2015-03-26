@@ -517,6 +517,24 @@ var Metronic = function() {
         }
     };
 
+    var handleTableExtend = function () {
+        $('body').on('click', '.cls', function (e) {
+            e.preventDefault();
+            var el = $(this).parent().parent().next();
+            var eltable = $(this).parent().parent().next().find('.subtable');
+            if ($(this).hasClass("fa-plus")) {
+                $(this).removeClass("fa-plus").addClass("fa-minus");
+                el.slideDown();
+                eltable.slideDown(200);
+            } else {
+                $(this).removeClass("fa-minus").addClass("fa-plus");
+                eltable.slideUp(200);
+                el.slideUp();
+            }
+        });
+        
+    }
+
     //* END:CORE HANDLERS *//
 
     return {
@@ -546,7 +564,7 @@ var Metronic = function() {
             handleAccordions(); //handles accordions 
             handleModals(); // handle modals
             handleBootstrapConfirmation(); // handle bootstrap confirmations
-
+            handleTableExtend();
             // Hacks
             handleFixInputPlaceholderForIE(); //IE8 & IE9 input placeholder issue fix
         },

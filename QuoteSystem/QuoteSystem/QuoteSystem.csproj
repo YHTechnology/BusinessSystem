@@ -4183,6 +4183,7 @@
     <Content Include="js\LoginApp.js" />
     <Content Include="login.html" />
     <Content Include="QSViews\bussnessquote.html" />
+    <Content Include="QSViews\componentmanager.html" />
     <Content Include="QSViews\materielmanager.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -198,6 +198,24 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
             }
         })
 
+        // component
+        .state('componentmanager', {
+            url: '/componentmanager.html',
+            templateUrl: "QSViews/componentmanager.html",
+            data: { pageTitle: "部件数据维护" },
+            controller: 'BussnessQuoteController',
+            resolve: {
+                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'MetronicApp',
+                        insertBefore: '#ng_load_plugins_before',
+                        files: [
+                            'js/controllers/BussnessQuoteController.js'
+                        ]
+                    });
+                }]
+            }
+        })
 
         // User Profile Dashboard
         .state("profile.dashboard", {
