@@ -6,5 +6,6 @@ MetronicApp.controller('BussnessQuoteController', function ($rootScope, $scope, 
         Metronic.initAjax();
     });
 
-
+    $scope.clqd = false;
+    $scope.xy = false;
 })

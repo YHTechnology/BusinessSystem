@@ -6,7 +6,11 @@ namespace BS.Entities
 {
     public enum ProjectStatus
     {
-
+        Created,
+        Designed,
+        DesignAndVerifyed,
+        Quoted,
+        Bid
     }
 
     public class Project
@@ -31,8 +35,15 @@ namespace BS.Entities
         public string BusinessCreateUser { get; set; }
 
         // 商务部创建日期
-        public DateTime BusinessCreateDateTime { get; set; }
+        public Nullable<DateTime> BusinessCreateDateTime { get; set; }
 
+        public virtual Client Client { get; set; }
+
+        public Nullable<DateTime> QuoteDateTime { get; set; }
+        // 状态
+        public ProjectStatus ProjectStatus { get; set; }
+
+        /*
         // 技术部设计人
         public string TechnologyDesignUser { get; set; }
         
@@ -44,8 +55,7 @@ namespace BS.Entities
     
         // 技术部审核日期
         public DateTime TechnologyVerifyDateTime { get; set; }
-
-        // 状态
-        public ProjectStatus ProjectStatus { get; set; }
+        */
+        
     }
 }

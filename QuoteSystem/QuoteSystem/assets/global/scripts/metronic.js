@@ -522,17 +522,30 @@ var Metronic = function() {
             e.preventDefault();
             var el = $(this).parent().parent().next();
             var eltable = $(this).parent().parent().next().find('.subtable');
-            if ($(this).hasClass("fa-plus")) {
-                $(this).removeClass("fa-plus").addClass("fa-minus");
-                el.slideDown();
-                eltable.slideDown(200);
-            } else {
-                $(this).removeClass("fa-minus").addClass("fa-plus");
+            if ($(this).hasClass("row-details-open")) {
+                $(this).removeClass("row-details-open").addClass("row-details-close");
                 eltable.slideUp(200);
                 el.slideUp();
+            } else {
+                $(this).removeClass("row-details-close").addClass("row-details-open");
+                el.slideDown();
+                eltable.slideDown(200);
             }
         });
         
+        $('body').on('click', '.colapsetablebtn', function(e){
+            var el = $(this).next();
+            if ($(this).hasClass("row-details-open")) {
+                $(this).removeClass("row-details-open").addClass("row-details-close");
+                //eltable.slideUp(200);
+                el.slideUp();
+            } else {
+                $(this).removeClass("row-details-close").addClass("row-details-open");
+                el.slideDown();
+                //eltable.slideDown(200);
+            }
+        });
+
     }
 
     //* END:CORE HANDLERS *//

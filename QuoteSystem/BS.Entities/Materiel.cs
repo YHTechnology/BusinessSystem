@@ -10,6 +10,12 @@ namespace BS.Entities
         [Key]
         public string MaterielID { get; set; } 
 
+        // 物料名称
+        public string MaterielName { get; set; }
+
+        // 物料查询名称
+        public string MaterielSearchName { get; set; }
+
         // 物料描述
         public string MeterieDescription { get; set; } 
 

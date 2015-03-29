@@ -15,6 +15,9 @@ namespace BS.Entities
         // 部件名称
         public string ComponentName { get; set; }
 
+        // 部件寻名称
+        public string ComponentSearchName { get; set; }
+
         // 单位
         public string Unit { get; set; }
 
@@ -22,7 +25,7 @@ namespace BS.Entities
         public virtual ICollection<TechnicalProtocol> TechnicalProtocols { get; set; }
 
         // 材料清单
-        public virtual ICollection<Materiel> Materiels { get; set; }
+        public virtual ICollection<ComponentMateriels> Materiels { get; set; }
 
         // 施工图
         public virtual ICollection<WorkingDrawing> WorkingDrawings { get; set; }
