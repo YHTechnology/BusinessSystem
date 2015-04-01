@@ -24,5 +24,10 @@ namespace QuoteSystem.Models
         public DbSet<BS.Entities.User> Users { get; set; }
         public DbSet<BS.Entities.UserAction> UserActions { get; set; }
         public DbSet<BS.Entities.WorkingDrawing> WorkingDrawings { get; set; }
+
+        public static BusnessSystemDBContext Create()
+        {
+            return new BusnessSystemDBContext();
+        }
     }
 }

@@ -18,7 +18,9 @@ namespace QuoteSystem.Identity
 
         public string Id { get; set; }
         public string UserName { get; set; }
-        public virtual string PasswordHash { get; set; }
-        public virtual string SecurityStamp { get; set; }
+        public string UserCName { get; set; }
+
+        //public virtual string PasswordHash { get; set; }
+        //public virtual string SecurityStamp { get; set; }
     }
 }
