@@ -28,19 +28,25 @@ namespace QuoteSystem.Identity
 
         public System.Threading.Tasks.Task<TUser> FindByIdAsync(string userId)
         {
-            BS.Entities.User lUser = _BusnessSystemDBContext.Users.Where(e => e.UserName == userId).First();
-
-            if (lUser != null)
+            try
             {
-                TUser lTUser = (TUser)Activator.CreateInstance(typeof(TUser));
-                lTUser.Id = lUser.UserName;
-                lTUser.UserName = lUser.UserName;
-                lTUser.UserCName = lUser.UserCName;
-                return System.Threading.Tasks.Task.FromResult<TUser>(lTUser);
+                BS.Entities.User lUser = _BusnessSystemDBContext.Users.Where(e => e.UserName == userId).First();
+
+                if (lUser != null)
+                {
+                    TUser lTUser = (TUser)Activator.CreateInstance(typeof(TUser));
+                    lTUser.Id = lUser.UserName;
+                    lTUser.UserName = lUser.UserName;
+                    lTUser.UserCName = lUser.UserCName;
+                    return System.Threading.Tasks.Task.FromResult<TUser>(lTUser);
+                }
+
+                return System.Threading.Tasks.Task.FromResult<TUser>(null);
             }
-
-            return System.Threading.Tasks.Task.FromResult<TUser>(null);
-
+            catch(Exception e)
+            {
+                return System.Threading.Tasks.Task.FromResult<TUser>(null);
+            }
             //throw new NotImplementedException();
         }
 

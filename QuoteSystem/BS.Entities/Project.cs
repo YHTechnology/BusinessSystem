@@ -37,9 +37,12 @@ namespace BS.Entities
         // 商务部创建日期
         public Nullable<DateTime> BusinessCreateDateTime { get; set; }
 
+        // 客户
         public virtual Client Client { get; set; }
 
+        // 报价日期
         public Nullable<DateTime> QuoteDateTime { get; set; }
+
         // 状态
         public ProjectStatus ProjectStatus { get; set; }
 

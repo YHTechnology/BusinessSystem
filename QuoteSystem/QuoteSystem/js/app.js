@@ -7,7 +7,8 @@ var MetronicApp = angular.module("MetronicApp", [
     "ui.router",
     "ui.bootstrap",
     "oc.lazyLoad",
-    "ngSanitize"
+    "ngSanitize",
+    "UserServices"
 ]);
 
 /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
@@ -99,11 +100,28 @@ initialization can be disabled and Layout.init() should be called on page load c
 ***/
 
 /* Setup Layout Part - Header */
-MetronicApp.controller('HeaderController', ['$scope', function ($scope) {
-    $scope.$on('$includeContentLoaded', function () {
-        Layout.initHeader(); // init header
-    });
-}]);
+MetronicApp.controller('HeaderController', 
+    ['$scope',
+     '$window',
+     '$location',
+     function ($scope, $window, $location) {
+         if ($window.sessionStorage.isLogin == undefined 
+            || $window.sessionStorage.isLogin == null
+            || $window.sessionStorage.isLogin == false) {
+             var mainUrl = $location.protocol() + "://" + $location.host() + ":" + $location.port() + "/login.html";
+             window.location.replace(mainUrl);
+         }
+    
+         $scope.userCName = $window.sessionStorage.userCName;
+         $scope.userGroup = $window.sessionStorage.userGroup;
+         $scope.userDepartment = $window.sessionStorage.userDepartment;
+
+
+
+        $scope.$on('$includeContentLoaded', function () {
+            Layout.initHeader(); // init header
+        });
+    }]);
 
 /* Setup Layout Part - Sidebar */
 MetronicApp.controller('SidebarController', ['$scope', function ($scope) {

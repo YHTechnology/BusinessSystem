@@ -10,6 +10,8 @@ namespace QuoteSystem.Models
 
         }
         public DbSet<BS.Entities.Action> Actions { get; set; }
+        public DbSet<BS.Entities.BSEvent> BSEvents { get; set; }
+        public DbSet<BS.Entities.BSTask> BSTasks { get; set; }
         public DbSet<BS.Entities.Client> Client { get; set; }
         public DbSet<BS.Entities.Component> Components { get; set; }
         public DbSet<BS.Entities.ComponentMateriels> ComponentMateriels { get; set; }

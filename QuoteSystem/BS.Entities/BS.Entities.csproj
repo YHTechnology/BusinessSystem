@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Action.cs" />
+    <Compile Include="BSEvent.cs" />
+    <Compile Include="BSTask.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ComponentMateriels.cs" />
     <Compile Include="Department.cs" />
