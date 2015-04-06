@@ -4261,12 +4261,14 @@
     <Content Include="index.html" />
     <Content Include="js\app.js" />
     <Content Include="js\controllers\BussnessQuoteController.js" />
+    <Content Include="js\controllers\ClientRequireController.js" />
     <Content Include="js\controllers\DashboardController.js" />
     <Content Include="js\directives.js" />
     <Content Include="js\LoginApp.js" />
     <Content Include="js\Service\UserService.js" />
     <Content Include="login.html" />
     <Content Include="QSViews\bussnessquote.html" />
+    <Content Include="QSViews\clientrequrie.html" />
     <Content Include="QSViews\componentmanager.html" />
     <Content Include="QSViews\materielmanager.html" />
     <Content Include="assets\admin\pages\media\blog\Thumbs.db" />

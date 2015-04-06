@@ -177,11 +177,29 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                 }]
             }
         })
+        
+        .state('clientrequire', {
+            url: '/clientrequrie.html',
+            templateUrl: 'QSViews/clientrequrie.html',
+            data: { pageTitle: '客户需求' },
+            controller: 'ClientRequireController',
+            resolve: {
+                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'MetronicApp',
+                        insertBefore: '#ng_load_plugins_before',
+                        files: [
+                            'js/controllers/ClientRequireController.js'
+                        ]
+                    });
+                }]
+            }
+        })
 
         // busnessquote
         .state('bussnessquote', {
             url: '/bussnessquote.html',
-            templateUrl: "QSViews/bussnessquote.html",
+            templateUrl: 'QSViews/bussnessquote.html',
             data: { pageTitle: '商务合同' },
             controller: 'BussnessQuoteController',
             resolve: {
