@@ -32,9 +32,7 @@ namespace QuoteSystem
                 AllowInsecureHttp = true
             };
             
-
             app.UseOAuthBearerTokens(OAuthOptions);
-
         }
     }
 }

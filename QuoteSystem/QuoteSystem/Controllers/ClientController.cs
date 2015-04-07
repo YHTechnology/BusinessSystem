@@ -25,7 +25,7 @@ namespace QuoteSystem.Controllers
 
         }
 
-        public ClientResult Get(int Page = 0, int PageSize = 10)
+        public ClientResult Get(int Page, int PageSize)
         {
             int totalCount = _BusnessSystemDBContext.Users.Count();
             int totalPages = (int)Math.Ceiling((double)totalCount / PageSize);
@@ -58,7 +58,8 @@ namespace QuoteSystem.Controllers
 
         public void Post([FromBody]BS.Entities.Client value)
         {
-
+            _BusnessSystemDBContext.Client.Add(value);
+            _BusnessSystemDBContext.SaveChanges();
         }
 
         public void Put(long id, [FromBody]BS.Entities.Client value)

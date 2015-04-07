@@ -43,15 +43,8 @@ LoginApp.controller('LoginController',
                  }, function (error) {
 
                  });
-
-                 
-
-                 
              }).error(function (data, status, header, config) {
                  //alert('error');
              })
-
-
-             
          };
      }])
