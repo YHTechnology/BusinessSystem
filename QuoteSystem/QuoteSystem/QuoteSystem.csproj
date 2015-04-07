@@ -227,6 +227,10 @@
     <Compile Include="Migration\201504060928413_EventAndTask.Designer.cs">
       <DependentUpon>201504060928413_EventAndTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migration\201504071526011_addtechuser.cs" />
+    <Compile Include="Migration\201504071526011_addtechuser.Designer.cs">
+      <DependentUpon>201504071526011_addtechuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\Configuration.cs" />
     <Compile Include="Models\BusnessSystemDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -4267,6 +4271,8 @@
     <Content Include="js\controllers\DashboardController.js" />
     <Content Include="js\directives.js" />
     <Content Include="js\LoginApp.js" />
+    <Content Include="js\Service\ClientService.js" />
+    <Content Include="js\Service\ProjectService.js" />
     <Content Include="js\Service\UserService.js" />
     <Content Include="login.html" />
     <Content Include="QSViews\bussnessquote.html" />
@@ -4655,6 +4661,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\201504060928413_EventAndTask.resx">
       <DependentUpon>201504060928413_EventAndTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\201504071526011_addtechuser.resx">
+      <DependentUpon>201504071526011_addtechuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

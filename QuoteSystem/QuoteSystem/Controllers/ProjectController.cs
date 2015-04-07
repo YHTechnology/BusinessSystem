@@ -27,7 +27,17 @@ namespace QuoteSystem.Controllers
 
         public ProjectResult Get(int Page, int PageSize, string aUserName)
         {
-            return null;
+            int totalCount = _BusnessSystemDBContext.Projects.Where(c => c.TechnologyUser == aUserName).Count();
+            int totalPages = (int)Math.Ceiling((double)totalCount / PageSize);
+
+            List<BS.Entities.Project> results = _BusnessSystemDBContext.Projects.Where(c => c.TechnologyUser == aUserName)
+                .OrderBy(c => c.BusinessCreateDateTime).Skip(PageSize * Page).Take(PageSize).ToList();
+
+            ProjectResult lProjectResults = new ProjectResult();
+            lProjectResults.TotalCount = totalCount;
+            lProjectResults.TotalPages = totalPages;
+            lProjectResults.Results = results;
+            return lProjectResults;
         }
 
         public IEnumerable<BS.Entities.Project> Get()
@@ -37,17 +47,31 @@ namespace QuoteSystem.Controllers
 
         public void Post([FromBody]BS.Entities.Project value)
         {
-
+            _BusnessSystemDBContext.Projects.Add(value);
+            _BusnessSystemDBContext.SaveChanges();
         }
 
         public void Put(long id, [FromBody]BS.Entities.Project value)
         {
-
+            BS.Entities.Project lProject = _BusnessSystemDBContext.Projects.Where(c => c.ProjectID == id).FirstOrDefault();
+            if (lProject != null)
+            {
+                lProject = value;
+                lProject.ProjectID = id;
+                _BusnessSystemDBContext.Projects.Attach(lProject);
+                _BusnessSystemDBContext.Entry<BS.Entities.Project>(lProject).State = System.Data.Entity.EntityState.Modified;
+                _BusnessSystemDBContext.SaveChanges();
+            }
         }
 
-        public void Delete(int id)
+        public void Delete(long id)
         {
-
+            BS.Entities.Project lProject = _BusnessSystemDBContext.Projects.Where(c => c.ProjectID == id).FirstOrDefault();
+            if (lProject != null)
+            {
+                _BusnessSystemDBContext.Projects.Remove(lProject);
+                _BusnessSystemDBContext.SaveChanges();
+            }
         }
     }
 }
