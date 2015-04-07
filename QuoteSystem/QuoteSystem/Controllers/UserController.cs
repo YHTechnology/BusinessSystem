@@ -41,8 +41,15 @@ namespace QuoteSystem.Controllers
 
         public BS.Entities.User Get(string id)
         {
-            BS.Entities.User lUser = _BusnessSystemDBContext.Users.Where(c => c.UserName == id).First();
-            return lUser;
+            try
+            {
+                BS.Entities.User lUser = _BusnessSystemDBContext.Users.Where(c => c.UserName == id).First();
+                return lUser;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
         }
 
         public void Post([FromBody]BS.Entities.User value)
