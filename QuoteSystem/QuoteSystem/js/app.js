@@ -218,9 +218,9 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
         })
 
         // meteriel
-        .state('meterielmanager', {
-            url: '/materielmanager.html',
-            templateUrl: "QSViews/materielmanager.html",
+        .state('materielmanager', {
+            url: '/materielmanager.aspx',
+            templateUrl: "QSViews/materielmanager.aspx",
             data: { pageTitle: "物料数据维护" },
             controller: 'BussnessQuoteController',
             resolve: {
