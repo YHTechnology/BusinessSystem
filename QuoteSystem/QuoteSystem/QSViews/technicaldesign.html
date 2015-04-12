@@ -23,9 +23,6 @@
                                 <th width="35%">
                                     项目名称
                                 </th>
-                                <th width="15%">
-                                    状态
-                                </th>
                                 <th width="45%">
                                     项目描述
                                 </th>
@@ -34,21 +31,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr role="row">
-                                <td>
-                                    
-                                </td>
-                                <td>
-                                    
-                                </td>
-                                <td>
-                                    
-                                </td>
-                                <td>
-                                    
-                                </td>
-                                <td>
-                                </td>
+                            <tr role="row" ng-repeat="projects in ProjectResult.Results">
+                                <td>{{projects.ProjectID}}</td>
+                                <td>{{projects.ProjectName}}</td>
+                                <td>{{projects.Describe}}</td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>

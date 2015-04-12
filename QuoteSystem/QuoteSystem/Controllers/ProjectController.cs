@@ -25,12 +25,12 @@ namespace QuoteSystem.Controllers
 
         }
 
-        public ProjectResult Get(int Page, int PageSize, string aUserName)
+        public ProjectResult Get(int Page, int PageSize, string UserName)
         {
-            int totalCount = _BusnessSystemDBContext.Projects.Where(c => c.TechnologyUser == aUserName).Count();
+            int totalCount = _BusnessSystemDBContext.Projects.Where(c => c.TechnologyUser == UserName).Count();
             int totalPages = (int)Math.Ceiling((double)totalCount / PageSize);
 
-            List<BS.Entities.Project> results = _BusnessSystemDBContext.Projects.Where(c => c.TechnologyUser == aUserName)
+            List<BS.Entities.Project> results = _BusnessSystemDBContext.Projects.Where(c => c.TechnologyUser == UserName)
                 .OrderBy(c => c.BusinessCreateDateTime).Skip(PageSize * Page).Take(PageSize).ToList();
 
             ProjectResult lProjectResults = new ProjectResult();

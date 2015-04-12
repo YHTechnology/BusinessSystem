@@ -88,7 +88,7 @@ MetronicApp.controller('ClientRequireController', function ($rootScope, $scope, 
     };
 
     $scope.OnSelectTechnologyUser = function ($item, $model, $label) {
-        project.TechnologyUser = $item.UserName;
+        $scope.project.TechnologyUser = $item.UserName;
     };
 
     $scope.Init();
