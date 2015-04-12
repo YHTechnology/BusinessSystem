@@ -31,7 +31,7 @@ LoginApp.controller('LoginController',
                  $window.sessionStorage.token_type = data.token_type;
                  $window.sessionStorage.access_token = data.access_token;
                  $window.sessionStorage.userName = data.userName;
-                 $scope.user = UserService.Users().query({ id: data.userName }, function (response) {
+                 $scope.user = UserService.Users().get({ id: data.userName }, function (response) {
                      $window.sessionStorage.userCName = $scope.user.UserCName;
                      $window.sessionStorage.userGroup = $scope.user.Group;
                      $window.sessionStorage.userDepartment = $scope.user.Department;

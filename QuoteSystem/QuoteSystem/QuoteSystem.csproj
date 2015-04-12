@@ -252,6 +252,10 @@
     <Compile Include="Migration\201504111328090_addtechcname.Designer.cs">
       <DependentUpon>201504111328090_addtechcname.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migration\201504120235383_updatebstask.cs" />
+    <Compile Include="Migration\201504120235383_updatebstask.Designer.cs">
+      <DependentUpon>201504120235383_updatebstask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\Configuration.cs" />
     <Compile Include="Models\BusnessSystemDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -4297,6 +4301,7 @@
     <Content Include="js\controllers\BussnessQuoteController.js" />
     <Content Include="js\controllers\ClientRequireController.js" />
     <Content Include="js\controllers\DashboardController.js" />
+    <Content Include="js\controllers\TechnicalDesignController.js" />
     <Content Include="js\directives.js" />
     <Content Include="js\LoginApp.js" />
     <Content Include="js\Service\ClientService.js" />
@@ -4595,6 +4600,7 @@
     <Content Include="assets\global\plugins\angularjs\angular-resource.min.js.map" />
     <Content Include="assets\global\plugins\angularjs\angular-route.min.js.map" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="QSViews\technicaldesign.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
@@ -4696,6 +4702,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\201504111328090_addtechcname.resx">
       <DependentUpon>201504111328090_addtechcname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\201504120235383_updatebstask.resx">
+      <DependentUpon>201504120235383_updatebstask.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

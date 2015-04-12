@@ -21,7 +21,8 @@
 								<span class="btn green fileinput-button">
 								<i class="fa fa-plus"></i>
 								<span>
-								Add files... </span>
+								123
+								</span>
 								<input type="file" name="files[]" multiple="">
 								</span>
 								<button type="submit" class="btn blue start" runat="server" OnClick="Unnamed_Click" >

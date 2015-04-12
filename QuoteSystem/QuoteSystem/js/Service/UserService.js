@@ -9,6 +9,10 @@ appUserServices.factory('UserService', function ($resource, $window) {
                     isArray: true,
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
+                get: {
+                    method: 'GET',
+                    headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
+                },
                 update: {
                     method: 'PUT',
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }

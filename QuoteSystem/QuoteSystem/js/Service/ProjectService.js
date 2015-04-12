@@ -6,6 +6,11 @@ appProjectServices.factory('ProjectService', function ($resource, $window) {
             return $resource('/api/Project/:id', { id: '@_id' }, {
                 query: {
                     method: 'GET',
+                    isArray: true,
+                    headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
+                },
+                get: {
+                    method: 'GET',
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
                 update: {

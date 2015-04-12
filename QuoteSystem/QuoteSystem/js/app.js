@@ -198,6 +198,25 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
             }
         })
 
+        // Technical Design
+        .state('technicaldesign', {
+            url: '/technicaldesign.html',
+            templateUrl: 'QSViews/technicaldesign.html',
+            data: { pageTitle: '技术设计' },
+            controller: 'TechnicalDesignController',
+            resolve: {
+                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'MetronicApp',
+                        insertBefore: '#ng_load_plugins_before',
+                        files: [
+                            'js/controllers/TechnicalDesignController.js'
+                        ]
+                    });
+                }]
+            }
+        })
+
         // busnessquote
         .state('bussnessquote', {
             url: '/bussnessquote.html',

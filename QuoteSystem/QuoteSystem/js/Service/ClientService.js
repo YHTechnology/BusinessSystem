@@ -9,12 +9,20 @@ appClientServices.factory('ClientService', function ($resource, $window) {
                     isArray: true,
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
+                get: {
+                    method: 'GET',
+                    headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
+                },
                 update: {
                     method: 'PUT',
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
                 add: {
                     method: 'POST',
+                    headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
+                },
+                delete: {
+                    method: 'DELETE',
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 }
             });
