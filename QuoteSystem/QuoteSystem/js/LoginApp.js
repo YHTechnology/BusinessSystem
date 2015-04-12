@@ -15,15 +15,14 @@ LoginApp.controller('LoginController',
      'UserService',
      function ($scope, $rootScope, $location, $http, $window, UserService) {
          $scope.formData;
-         $scope.hasError = false;
+         $scope.HasError = false;
          $scope.ErrorText = "";
-         $scope.ButtonInfo = "Login";
-         $scope.buttondisabled = false;
+         $scope.ButtonInfo = "登录";
+         $scope.ButtonDisabled = false;
          $window.sessionStorage.isLogin = false;
          $scope.OnSubmit = function () {
-
-             $scope.ButtonInfo = "Login...";
-             $scope.buttondisabled = true;
+             $scope.ButtonInfo = "正在登录...";
+             $scope.ButtonDisabled = true;
              var logindata = $(".login-form").serialize();
              logindata = logindata + "&grant_type=password";
              //alert(logindata);
@@ -32,7 +31,6 @@ LoginApp.controller('LoginController',
                  $window.sessionStorage.token_type = data.token_type;
                  $window.sessionStorage.access_token = data.access_token;
                  $window.sessionStorage.userName = data.userName;
-
                  $scope.user = UserService.Users().query({ id: data.userName }, function (response) {
                      $window.sessionStorage.userCName = $scope.user.UserCName;
                      $window.sessionStorage.userGroup = $scope.user.Group;
@@ -44,6 +42,10 @@ LoginApp.controller('LoginController',
 
                  });
              }).error(function (data, status, header, config) {
+                 $scope.HasError = true;
+                 $scope.ErrorText = "用户名密码错误";
+                 $scope.ButtonInfo = "登录";
+                 $scope.ButtonDisabled = false;
                  //alert('error');
              })
          };

@@ -2,7 +2,7 @@
 
 appProjectServices.factory('ProjectService', function ($resource, $window) {
     return {
-        Clients: function () {
+        Projects: function () {
             return $resource('/api/Project/:id', { id: '@_id' }, {
                 query: {
                     method: 'GET',
@@ -13,7 +13,7 @@ appProjectServices.factory('ProjectService', function ($resource, $window) {
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
                 add: {
-                    method: 'PUST',
+                    method: 'POST',
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 }
             });

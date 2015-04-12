@@ -7,129 +7,134 @@
         <div class="portlet">
             <div class="portlet-title">
                 <div class="caption">
-                    
+
                 </div>
                 <div class="actions">
                 </div>
             </div>
             <div class="portlet-body">
                 <form class="form-horizontal" role="form" name="clientrequire" ng-submit="OnSubmitClientRequire()" novalidate>
-                    <h4>客户信息</h4>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="ClientName" class="col-md-2 control-label">
-                                    客户名称：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="ClientName" ng-model="client.ClientName" />
+                    <fieldset>
+                        <legend>客户信息</legend>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="ClientName" class="col-md-2 control-label">
+                                        客户名称：
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text"
+                                               class="form-control"
+                                               name="ClientName"
+                                               ng-model="client.ClientName"
+                                               typeahead="clientname for clientname in ClientNames | filter:$viewValue | limitTo: 8"
+                                               ng-change="OnClientNameChanged()"
+                                               typeahead-on-select="OnSelectName($item, $model, $label)" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="CountryDomain" class="col-md-2 control-label">
-                                    区域：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="CountryDomain" ng-model="client.CountryDomain" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="CountryDomain" class="col-md-2 control-label">
+                                        区域：
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="CountryDomain" ng-model="client.CountryDomain" ng-disabled="IsSelectClient" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="ContactPerson" class="col-md-2 control-label">
-                                    联系人：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="ContactPerson" ng-model="client.ContactPerson" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="ContactPerson" class="col-md-2 control-label">
+                                        联系人：
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="ContactPerson" ng-model="client.ContactPerson" ng-disabled="IsSelectClient" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="ContactWay" class="col-md-2 control-label">
-                                    联系方式：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="ContactWay" ng-model="client.ContactWay" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="ContactWay" class="col-md-2 control-label">
+                                        联系方式：
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="ContactWay" ng-model="client.ContactWay" ng-disabled="IsSelectClient" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="ContactWay" class="col-md-2 control-label">
-                                    联系方式：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="ContactWay" ng-model="client.ContactWay" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Duties" class="col-md-2 control-label">
+                                        职务：
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="Duties" ng-model="client.Duties" ng-disabled="IsSelectClient" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="Duties" class="col-md-2 control-label">
-                                    职务：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="Duties" ng-model="client.Duties" />
+                    </fieldset>
+                    <fieldset>
+                        <legend>项目描述</legend>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="ProjectName" class="col-md-2 control-label">
+                                        项目名称：
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="ProjectName" ng-model="project.ProjectName" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <h4>项目描述</h4>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="ProjectName" class="col-md-2 control-label">
-                                    项目名称：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="ProjectName" ng-model="project.ProjectName" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Describe" class="col-md-2 control-label">
+                                        项目描述：
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="Describe" ng-model="project.Describe" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="Describe" class="col-md-2 control-label">
-                                    项目描述：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="Describe" ng-model="project.Describe" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Describe" class="col-md-2 control-label">
+                                        技术部负责人：
+                                    </label>
+                                    <div class="col-md-10">
+                                        <input type="text"
+                                               class="form-control"
+                                               name="Describe"
+                                               ng-model="project.TechnologyUserCName"
+                                               typeahead-editable="false"
+                                               typeahead-on-select="OnSelectTechnologyUser($item, $model, $label)"
+                                               typeahead="user.UserCName for user in Users | filter:$viewValue | limitTo: 8" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="Describe" class="col-md-2 control-label">
-                                    技术部负责人：
-                                </label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="Describe" ng-model="TechnologyDesignUser" />
-                                </div>
+                        <div class="row">
+                            <div class="col-md-12 text-align-reverse">
+                                <button class="btn btn-default">提交</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 text-align-reverse">
-                            <button class="btn btn-default">提交</button>
-                        </div>
-                    </div>
+                    </fieldset>
                 </form>
+
             </div>
         </div>
     </div>

@@ -26,7 +26,7 @@ namespace QuoteSystem.Controllers
 
         }
 
-        public UserResult Get(int Page = 0, int PageSize = 10)
+        public UserResult Get(int Page, int PageSize)
         {
             int totalCount = _BusnessSystemDBContext.Users.Count();
             int totalPages = (int)Math.Ceiling((double)totalCount / PageSize);
@@ -39,7 +39,17 @@ namespace QuoteSystem.Controllers
             return lUserResults;
         }
 
-        public BS.Entities.User Get(string id)
+        public IEnumerable<BS.Entities.User> Get()
+        {
+            return _BusnessSystemDBContext.Users;
+        }
+
+        public IEnumerable<BS.Entities.User> Get(string Department)
+        {
+            return _BusnessSystemDBContext.Users.Where(c => c.Department == Department);
+        }
+
+        public BS.Entities.User GetUserByID(string id)
         {
             try
             {
@@ -51,7 +61,7 @@ namespace QuoteSystem.Controllers
                 return null;
             }
         }
-
+        
         public void Post([FromBody]BS.Entities.User value)
         {
 

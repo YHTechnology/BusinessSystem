@@ -47,6 +47,11 @@ namespace QuoteSystem.Controllers
 
         public void Post([FromBody]BS.Entities.Project value)
         {
+            if (value.Client != null && value.Client.ClientID != 0)
+            {
+                BS.Entities.Client lClient = _BusnessSystemDBContext.Clients.Where(c => c.ClientID == value.Client.ClientID).FirstOrDefault();
+                value.Client = lClient;
+            }
             _BusnessSystemDBContext.Projects.Add(value);
             _BusnessSystemDBContext.SaveChanges();
         }

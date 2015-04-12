@@ -224,6 +224,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\BSEventController.cs" />
+    <Compile Include="Controllers\BSTaskController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -245,6 +247,10 @@
     <Compile Include="Migration\201504071526011_addtechuser.cs" />
     <Compile Include="Migration\201504071526011_addtechuser.Designer.cs">
       <DependentUpon>201504071526011_addtechuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\201504111328090_addtechcname.cs" />
+    <Compile Include="Migration\201504111328090_addtechcname.Designer.cs">
+      <DependentUpon>201504111328090_addtechcname.cs</DependentUpon>
     </Compile>
     <Compile Include="Migration\Configuration.cs" />
     <Compile Include="Models\BusnessSystemDBContext.cs" />
@@ -4687,6 +4693,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\201504071526011_addtechuser.resx">
       <DependentUpon>201504071526011_addtechuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\201504111328090_addtechcname.resx">
+      <DependentUpon>201504111328090_addtechcname.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

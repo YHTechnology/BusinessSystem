@@ -6,6 +6,7 @@ appClientServices.factory('ClientService', function ($resource, $window) {
             return $resource('/api/Client/:id', { id: '@_id' }, {
                 query: {
                     method: 'GET',
+                    isArray: true,
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
                 update: {
@@ -13,7 +14,7 @@ appClientServices.factory('ClientService', function ($resource, $window) {
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
                 add: {
-                    method: 'PUST',
+                    method: 'POST',
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 }
             });

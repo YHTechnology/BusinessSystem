@@ -46,8 +46,11 @@ namespace BS.Entities
         // 状态
         public ProjectStatus ProjectStatus { get; set; }
 
-        // 技术部负责人
+        // 技术部负责人编号
         public string TechnologyUser { get; set; }
+
+        // 技术部负责人名字
+        public string TechnologyUserCName { get; set; }
         /*
         // 技术部设计人
         public string TechnologyDesignUser { get; set; }

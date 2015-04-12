@@ -6,6 +6,7 @@ appUserServices.factory('UserService', function ($resource, $window) {
             return $resource('/api/User/:id', { id: '@_id' }, {
                 query: {
                     method: 'GET',
+                    isArray: true,
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
                 update: {
@@ -13,7 +14,7 @@ appUserServices.factory('UserService', function ($resource, $window) {
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 },
                 add: {
-                    method: 'PUST',
+                    method: 'POST',
                     headers: { 'Authorization': $window.sessionStorage.token_type + ' ' + $window.sessionStorage.access_token }
                 }
             });

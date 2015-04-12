@@ -37,7 +37,7 @@ namespace BS.Entities
         public string TaskCUser { get; set; }
 
         // 创建任务用户编号
-        public string CreatTaskUser { get; set; }
+        public string CreateTaskUser { get; set; }
 
         // 创建任务用户名
         public string CreateTaskCUser { get; set; }
