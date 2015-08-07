@@ -2126,6 +2126,7 @@
     <Content Include="assets\global\plugins\angularjs\angular-cookies.min.js" />
     <Content Include="assets\global\plugins\angularjs\angular-loader.min.js" />
     <Content Include="assets\global\plugins\angularjs\angular-messages.min.js" />
+    <Content Include="assets\global\plugins\angularjs\angular-mocks.js" />
     <Content Include="assets\global\plugins\angularjs\angular-resource.min.js" />
     <Content Include="assets\global\plugins\angularjs\angular-route.min.js" />
     <Content Include="assets\global\plugins\angularjs\angular-sanitize.min.js" />
@@ -3571,6 +3572,10 @@
     <Content Include="assets\global\plugins\ion.rangeslider\js\ion-rangeSlider\ion.rangeSlider.js" />
     <Content Include="assets\global\plugins\ion.rangeslider\js\ion-rangeSlider\ion.rangeSlider.min.js" />
     <Content Include="assets\global\plugins\ion.rangeslider\js\vendor\jquery-1.11.0.min.js" />
+    <Content Include="assets\global\plugins\jasmine\css\jasmine.css" />
+    <Content Include="assets\global\plugins\jasmine\js\boot.js" />
+    <Content Include="assets\global\plugins\jasmine\js\jasmine-html.js" />
+    <Content Include="assets\global\plugins\jasmine\js\jasmine.js" />
     <Content Include="assets\global\plugins\jcrop\crop-demo.php" />
     <Content Include="assets\global\plugins\jcrop\css\Jcrop.gif" />
     <Content Include="assets\global\plugins\jcrop\css\jquery.Jcrop.css" />
@@ -4308,6 +4313,8 @@
     <Content Include="js\Service\ClientService.js" />
     <Content Include="js\Service\ProjectService.js" />
     <Content Include="js\Service\UserService.js" />
+    <Content Include="js\unittest\ClientRequireControllerUnitTest.js" />
+    <Content Include="js\unittest\DashboardControllerUnitTest.js" />
     <Content Include="login.html" />
     <Content Include="QSViews\bussnessquote.html" />
     <Content Include="QSViews\clientrequrie.html" />
@@ -4661,6 +4668,7 @@
     <Content Include="Temples\views\ui_bootstrap.html" />
     <Content Include="Temples\views\ui_select.html" />
     <Content Include="QSViews\dashboard.html" />
+    <Content Include="UnitTest.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,6 +1,4 @@
-﻿/***
-AngularJS App Login Script
-***/
+﻿'use strict'
 
 var LoginApp = angular.module("LoginApp", [
     "UserServices"
